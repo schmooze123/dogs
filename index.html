@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="EN" ng-app="">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>DOG LOVE</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 </head>
 <body>
 
@@ -19,7 +20,17 @@
 		</div>
 
 	</div>
-
+<input type="text" ng-model="name">
+<div ng:bind="name"></div>
+<div ng:init="name='priyanshu'">
+	{{name}}
+	</div>
+	<div ng-init="myFav=[{Fname: 'Priyanshu', Lname: 'Shrivastava'},{Fname: 'Paridhi', Lname:'Shrivastava'}, {Fname: 'Akriti', Lname: 'Tiwari'}]">
+		<p ng-repeat="language in myFav">
+			First Name:{{ language.Fname }}
+			Last Name: {{ language.Lname }}<br>
+		</p>
+	</div>
 <!--==========================Header Ends======================================-->
 
 <!--==============================Navigatin starts=============================-->

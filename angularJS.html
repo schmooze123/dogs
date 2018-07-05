@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="EN" ng-app="myLanguageApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>DOG LOVE</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+</head>
+<body>
+
+
+<!--========================Header Starts======================================-->
+
+	
+<input type="text" ng-model="name">
+<div ng:bind="name"></div>
+<div ng:init="name='priyanshu'">
+	{{name}}
+	</div>
+	<div ng-init="myFav=[{Fname: 'Priyanshu', Lname: 'Shrivastava'},{Fname: 'Paridhi', Lname:'Shrivastava'}, {Fname: 'Akriti', Lname: 'Tiwari'}]">
+		<p ng-repeat="language in myFav">
+			First Name:{{ language.Fname }}
+			Last Name: {{ language.Lname }}<br>
+		</p>
+	</div>
+	<div ng-controller="languages">
+		Select your Language
+		<button ng-click="php()">PHP</button>
+		<button ng-click="javascript()">Javascript</button>
+		<button ng-click="java()">Java</button>
+		<button ng-click="cpp()">C++</button>
+
+		<p>You have selected: {{ myFavLanguage }}</p>
+
+	</div>
+
+	<script type="text/javascript">
+		var application = angular.module('myLanguageApp', []);
+		application.controller('languages', function($scope){
+			$scope.myFavLanguage = 'None';
+
+			$scope.php = function(){
+				$scope.myFavLanguage = "PHP";
+			};
+			$scope.javascript = function(){
+				$scope.myFavLanguage = "Javascript";
+			};
+			$scope.java = function(){
+				$scope.myFavLanguage = "Java";
+			};
+			$scope.cpp = function(){
+				$scope.myFavLanguage = "C++";
+			};
+		});
+
+	</script>
+
+
+Uppercase<input type="text" ng-model="naming">
+{{ naming | uppercase }}<br>
+
+Lowecase<input type="text" ng-model="naming1">
+{{ naming1 | lowercase }}<br>
+
+Currency(in $)<input type="text" ng-model="naming2">
+{{ naming2 | currency:"$" }}<br>
+
+Currency(in Rs.)<input type="text" ng-model="naming3">
+{{ naming3 | currency:"Rs. ":0 }}<br>
+
+Number<input type="text" ng-model="naming4">
+{{ naming4 | number }}<br>
+
+
+<!--==========================Scripts Starts=============================-->
+	<script type="text/javascript" src="js/jquery.js"></script>	
+	<script type="text/javascript" src="js/easySlider1.7.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true, 
+				continuous: true
+			});
+		});	
+	</script>
+<!--==========================Scripts Ends=============================-->
+
+</body>
+</html>
