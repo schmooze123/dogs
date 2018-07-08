@@ -6,7 +6,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="mainApp">
 
 
 <!--========================Header Starts======================================-->
@@ -71,6 +71,29 @@ Currency(in Rs.)<input type="text" ng-model="naming3">
 Number<input type="text" ng-model="naming4">
 {{ naming4 | number }}<br>
 
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+
+<div ng-view></div>
+
+
+
+<script type="text/javascript">
+	var app = angular.module('mainApp', ['ngRoute']);
+
+	app.config(function($routeProvider){
+		$routeProvider
+		.when('/',{
+			template: 'Welcome user!'
+		})
+		.when('/anotherPage', {
+			template: 'Welcome user, again!'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+	});
+
+</script>
 
 <!--==========================Scripts Starts=============================-->
 	<script type="text/javascript" src="js/jquery.js"></script>	
